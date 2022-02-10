@@ -15,16 +15,13 @@ def webServer(port=13331):
     #Establish the connection
     # print('Ready to serve...')
     connectionSocket, addr = serverSocket.accept()
-    # print("test")
     try:
       try:
-        print("in first try")
         message = connectionSocket.recv(1024).decode(set)
         filename = message.split()[1]
         f = open(filename[1:])
-        # print(f)
         outputdata = f.read()
-        # print(outputdata)
+
         
         #Send one HTTP header line into socket.
         connectionSocket.send("200 OK".encode())
