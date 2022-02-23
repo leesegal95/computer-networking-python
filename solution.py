@@ -2,8 +2,7 @@ from socket import *
 
 
 def smtp_client(port=1025, mailserver='127.0.0.1'):
-    msg = "\r\n My message"
-    endmsg = "\r\n.\r\n"
+    # msg = "\r\n My message"
 
     # Choose a mail server (e.g. Google mail server) if you want to verify the script beyond GradeScope
 
@@ -56,16 +55,19 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
         pass
 
     # Send message data.
-    msg_data = 'Date: Wed, 30 July 2019 06:04:34, From: test@client.net, Subject: How SMTP works, To: user@recipient.net, computers are cool\r\n'
+    msg_line_1 = 'Subject: Please pass gradescope\r\n'
+    msg_line_2 = 'Gradescope, do you like my code?\r\n'
     # msg_data = msg
-    clientSocket.send(msg_data.encode())
-    recv1 = clientSocket.recv(1024).decode()
+    clientSocket.send(msg_line_1.encode())
+    clientSocket.send(msg_line_2.encode())
+    # recv1 = clientSocket.recv(1024).decode()
     # print(recv1)
-    if recv1[:3] != '250':
-       # print('250 reply not received from server.')
-       pass
+    # if recv1[:3] != '250':
+    #    # print('250 reply not received from server.')
+    #    pass
 
     # Message ends with a single period.
+    endmsg = "\r\n.\r\n"
     clientSocket.send(endmsg.encode())
     recv1 = clientSocket.recv(1024).decode()
     # print(recv1)
@@ -81,6 +83,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     if recv1[:3] != '250':
         # print('250 reply not received from server.')
         pass
+      
     clientSocket.close()
 
 
