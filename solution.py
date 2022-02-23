@@ -56,9 +56,9 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
         pass
 
     # Send message data.
-    # msg_data = 'Date: Wed, 30 July 2019 06:04:34, From: test@client.net, Subject: How SMTP works, To: user@recipient.net, Body text\r\n'
+    msg_data = 'Date: Wed, 30 July 2019 06:04:34, From: test@client.net, Subject: How SMTP works, To: user@recipient.net, computers are cool\r\n'
     # msg_data = msg
-    clientSocket.send(msg.encode())
+    clientSocket.send(msg_data.encode())
     recv1 = clientSocket.recv(1024).decode()
     # print(recv1)
     if recv1[:3] != '250':
@@ -66,7 +66,6 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
        pass
 
     # Message ends with a single period.
-    # period = '\r\n.\r\n'
     clientSocket.send(endmsg.encode())
     recv1 = clientSocket.recv(1024).decode()
     # print(recv1)
