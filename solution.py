@@ -128,8 +128,8 @@ def get_route(hostname):
                 #Fill in end
                 try: #try to fetch the hostname
                     #Fill in start
-                    getHostname = addr[0]
-                    # print(socket.gethostbyaddr(addr[0]))
+                    # getHostname = addr[0]
+                    getHostname = socket.gethostbyaddr(destAddr)[0]
                     # print(hostname)
                     # print(hostname)
                     #Fill in end
