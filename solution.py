@@ -128,7 +128,7 @@ def get_route(hostname):
                 #Fill in end
                 try: #try to fetch the hostname
                     #Fill in start
-                    hostname = addr[0]
+                    getHostname = addr[0]
                     # print(socket.gethostbyaddr(addr[0]))
                     # print(hostname)
                     # print(hostname)
@@ -136,7 +136,7 @@ def get_route(hostname):
                     # pass
                 except error:   #if the host does not provide a hostname
                     #Fill in start
-                    hostname = "hostname not returnable"
+                    getHostname = "hostname not returnable"
                     # print(hostname)
                     #Fill in end
                     # pass
@@ -147,7 +147,7 @@ def get_route(hostname):
                     bytes])[0]
                     #Fill in start
                     #You should add your responses to your lists here
-                    responses = (' %d rtt=%.0f ms %s' %(ttl, (timeReceived - timeSent)*1000, hostname))
+                    responses = (' %d rtt=%.0f ms %s' %(ttl, (timeReceived - timeSent)*1000, getHostname))
                     #print(responses)
                     tracelist2.append(responses)
                     #Fill in end
@@ -156,14 +156,14 @@ def get_route(hostname):
                     timeSent = struct.unpack("d", recvPacket[28:28 + bytes])[0]
                     #Fill in start
                     #You should add your responses to your lists here
-                    responses = (' %d rtt=%.0f ms %s' %(ttl, (timeReceived - timeSent)*1000, hostname)) 
+                    responses = (' %d rtt=%.0f ms %s' %(ttl, (timeReceived - timeSent)*1000, getHostname)) 
                     #print(responses)
                     tracelist2.append(responses)
                     #Fill in end
                 elif types == 0:
                     bytes = struct.calcsize("d")
                     timeSent = struct.unpack("d", recvPacket[28:28 + bytes])[0]
-                    responses = (' %d rtt=%.0f ms %s' %(ttl, (timeReceived - timeSent)*1000, hostname)) 
+                    responses = (' %d rtt=%.0f ms %s' %(ttl, (timeReceived - timeSent)*1000, getHostname)) 
                     tracelist2.append(responses)
                     #print(responses)
                     # print(tracelist2)
