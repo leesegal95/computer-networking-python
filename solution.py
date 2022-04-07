@@ -153,7 +153,7 @@ def get_route(hostname):
                     #You should add your responses to your lists here
                     tracelist1.append([ttl, destAddr, getHostname])
                     # print( tracelist1)
-                    tracelist2.append(tracelist1)
+                    # tracelist2.append(tracelist1)
                     #Fill in end
                 elif types == 3:
                     bytes = struct.calcsize("d")
@@ -162,7 +162,7 @@ def get_route(hostname):
                     #You should add your responses to your lists here
                     tracelist1.append([ttl, destAddr, getHostname])
                     # print(tracelist1)
-                    tracelist2.append(tracelist1)
+                    # tracelist2.append(tracelist1)
                     #Fill in end
                 elif types == 0:
                     bytes = struct.calcsize("d")
@@ -172,7 +172,7 @@ def get_route(hostname):
                     # print(tracelist1)
                     tracelist2.append(tracelist1)
                     #print(responses)
-                    # print(tracelist2)
+                    #print(tracelist2)
                     return tracelist2
                     #Fill in start
                     #You should add your responses to your lists here and return your list if your destination IP is met
