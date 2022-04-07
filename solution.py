@@ -133,10 +133,10 @@ def get_route(hostname):
                 try: #try to fetch the hostname
                     #Fill in start
                     # getHostname = addr[0]
-                    getHostname = socket.gethostbyaddr(destAddr)[0]
+                    getHostname = socket.gethostbyaddr(destAddr)
                     # print(hostname)
                     # print(hostname)
-                    print(getHostname)
+                    # print(getHostname)
                     #Fill in end
                     # pass
                 except error:   #if the host does not provide a hostname
