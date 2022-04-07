@@ -147,7 +147,7 @@ def get_route(hostname):
                     bytes])[0]
                     #Fill in start
                     #You should add your responses to your lists here
-                    responses = (' %d rtt=%.0f ms %s' %(ttl, (timeReceived - timeSent)*1000, getHostname))
+                    responses = (' %d rtt=%.0f ms %s' %(ttl, destAddr, getHostname))
                     #print(responses)
                     tracelist2.append(responses)
                     #Fill in end
@@ -156,14 +156,14 @@ def get_route(hostname):
                     timeSent = struct.unpack("d", recvPacket[28:28 + bytes])[0]
                     #Fill in start
                     #You should add your responses to your lists here
-                    responses = (' %d rtt=%.0f ms %s' %(ttl, (timeReceived - timeSent)*1000, getHostname)) 
+                    responses = (' %d rtt=%.0f ms %s' %(ttl, destAddr, getHostname)) 
                     #print(responses)
                     tracelist2.append(responses)
                     #Fill in end
                 elif types == 0:
                     bytes = struct.calcsize("d")
                     timeSent = struct.unpack("d", recvPacket[28:28 + bytes])[0]
-                    responses = (' %d rtt=%.0f ms %s' %(ttl, (timeReceived - timeSent)*1000, getHostname)) 
+                    responses = (' %d rtt=%.0f ms %s' %(ttl, destAddr, getHostname)) 
                     tracelist2.append(responses)
                     #print(responses)
                     # print(tracelist2)
