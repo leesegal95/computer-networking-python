@@ -128,7 +128,7 @@ def get_route(hostname):
                 #Fill in end
                 try: #try to fetch the hostname
                     #Fill in start
-                    hostname = destAddr
+                    hostname = socket.gethostbyaddr(destAddr)[0]
                     # print(hostname)
                     #Fill in end
                     # pass
@@ -145,7 +145,7 @@ def get_route(hostname):
                     bytes])[0]
                     #Fill in start
                     #You should add your responses to your lists here
-                    responses = (' %d rtt=%.0f ms %s' %(ttl, (timeReceived - timeSent)*1000, addr[0]))
+                    responses = (' %d rtt=%.0f ms %s' %(ttl, (timeReceived - timeSent)*1000, hostname))
                     #print(responses)
                     tracelist2.append(responses)
                     #Fill in end
@@ -154,17 +154,17 @@ def get_route(hostname):
                     timeSent = struct.unpack("d", recvPacket[28:28 + bytes])[0]
                     #Fill in start
                     #You should add your responses to your lists here
-                    responses = (' %d rtt=%.0f ms %s' %(ttl, (timeReceived - timeSent)*1000, addr[0])) 
+                    responses = (' %d rtt=%.0f ms %s' %(ttl, (timeReceived - timeSent)*1000, hostname)) 
                     #print(responses)
                     tracelist2.append(responses)
                     #Fill in end
                 elif types == 0:
                     bytes = struct.calcsize("d")
                     timeSent = struct.unpack("d", recvPacket[28:28 + bytes])[0]
-                    responses = (' %d rtt=%.0f ms %s' %(ttl, (timeReceived - timeSent)*1000, addr[0])) 
+                    responses = (' %d rtt=%.0f ms %s' %(ttl, (timeReceived - timeSent)*1000, hostname)) 
                     tracelist2.append(responses)
                     #print(responses)
-                    print(tracelist2)
+                    # print(tracelist2)
                     return tracelist2
                     #Fill in start
                     #You should add your responses to your lists here and return your list if your destination IP is met
