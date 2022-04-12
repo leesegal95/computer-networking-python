@@ -110,7 +110,7 @@ def get_route(hostname):
                     tracelist1.append("* * * Request timed out.")
                     #Fill in start
                     #You should add the list above to your all traces list
-                    # tracelist2.append(tracelist1)
+                    tracelist2.append(tracelist1)
                     #Fill in end
                 recvPacket, addr = mySocket.recvfrom(1024)
                 timeReceived = time.time()
@@ -119,7 +119,7 @@ def get_route(hostname):
                     tracelist1.append("* * * Request timed out.")
                     #Fill in start
                     #You should add the list above to your all traces list
-                    # tracelist2.append(tracelist1)
+                    tracelist2.append(tracelist1)
                     #Fill in end
             except timeout:
                 continue
