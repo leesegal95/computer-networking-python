@@ -134,7 +134,8 @@ def get_route(hostname):
                 try: #try to fetch the hostname
                     #Fill in start
                     # getHostname = addr[0]
-                    getHostname = socket.gethostbyaddr(addr[0])
+                    grabbingHostName = socket.gethostbyaddr(addr[0])
+                    getHostname = grabbingHostName[0]
                     # print(hostname)
                     # print(hostname)
                     # print(getHostname)
@@ -174,7 +175,7 @@ def get_route(hostname):
                     # print(tracelist1)
                     tracelist2.append(tracelist1)
                     #print(responses)
-                    # print(tracelist2)
+                    print(tracelist2)
                     return tracelist2
                     #Fill in start
                     #You should add your responses to your lists here and return your list if your destination IP is met
