@@ -156,7 +156,7 @@ def get_route(hostname):
                     #Fill in start
                     #You should add your responses to your lists here
                     delayCalc = (timeReceived - timeSent)*1000
-                    tracelist1 = [ttl, delayCalc, destAddr, getHostname]
+                    tracelist1 = [ttl, str(delayCalc), destAddr, getHostname]
                     # print( tracelist1)
                     tracelist2.append(tracelist1)
                     #Fill in end
@@ -166,7 +166,7 @@ def get_route(hostname):
                     #Fill in start
                     #You should add your responses to your lists here
                     delayCalc = (timeReceived - timeSent)*1000
-                    tracelist1 = [ttl, delayCalc, destAddr, getHostname]
+                    tracelist1 = [ttl, str(delayCalc), destAddr, getHostname]
                     # tracelist1 = ([ttl, destAddr, getHostname])
                     # print(tracelist1)
                     tracelist2.append(tracelist1)
@@ -177,7 +177,7 @@ def get_route(hostname):
                     #re-initalize the list
                     # need add the delay element 
                     delayCalc = (timeReceived - timeSent)*1000
-                    tracelist1 = [ttl, delayCalc, destAddr, getHostname]
+                    tracelist1 = [ttl, str(delayCalc), destAddr, getHostname]
                     # tracelist1 = ([ttl, destAddr, getHostname])
                     # tracelist2.append(responses)
                     # print(tracelist1)
