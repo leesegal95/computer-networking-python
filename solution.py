@@ -153,8 +153,8 @@ def get_route(hostname):
                     bytes = struct.calcsize("d")
                     timeSent = struct.unpack("d", recvPacket[28:28 +
                     bytes])[0]
-                    delayT = timeReceived - timeSent
-                    print(delayT)
+                    # delayT = timeReceived - timeSent
+                    # print(delayT)
                     #Fill in start
                     #You should add your responses to your lists here
                     tracelist1.append([ttl, destAddr, getHostname])
@@ -164,8 +164,8 @@ def get_route(hostname):
                 elif types == 3:
                     bytes = struct.calcsize("d")
                     timeSent = struct.unpack("d", recvPacket[28:28 + bytes])[0]
-                    delayT = timeReceived - timeSent
-                    print(delayT)
+                    # delayT = timeReceived - timeSent
+                    # print(delayT)
                     #Fill in start
                     #You should add your responses to your lists here
                     tracelist1.append([ttl,destAddr, getHostname])
@@ -175,8 +175,8 @@ def get_route(hostname):
                 elif types == 0:
                     bytes = struct.calcsize("d")
                     timeSent = struct.unpack("d", recvPacket[28:28 + bytes])[0]
-                    delayT = timeReceived - timeSent
-                    print(delayT)
+                    # delayT = timeReceived - timeSent
+                    # print(delayT)
                     #re-initalize the list
                     # need add the delay element 
                     tracelist1.append([ttl ,destAddr, getHostname])
