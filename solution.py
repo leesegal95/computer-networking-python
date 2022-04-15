@@ -156,7 +156,9 @@ def get_route(hostname):
                     #Fill in start
                     #You should add your responses to your lists here
                     delayCalc = (timeReceived - timeSent)*1000
-                    tracelist1 = [ttl, str(delayCalc), destAddr, getHostname]
+                    # print(delayCalc)
+                    tracelist1 = [str(ttl), str(delayCalc), destAddr, getHostname]
+                    # tracelist1 = [ttl, str(delayCalc), destAddr, getHostname]
                     # print( tracelist1)
                     tracelist2.append(tracelist1)
                     #Fill in end
@@ -166,7 +168,8 @@ def get_route(hostname):
                     #Fill in start
                     #You should add your responses to your lists here
                     delayCalc = (timeReceived - timeSent)*1000
-                    tracelist1 = [ttl, str(delayCalc), destAddr, getHostname]
+                    # print(delayCalc)
+                    tracelist1 = [str(ttl), str(delayCalc), destAddr, getHostname]
                     # tracelist1 = ([ttl, destAddr, getHostname])
                     # print(tracelist1)
                     tracelist2.append(tracelist1)
@@ -177,13 +180,14 @@ def get_route(hostname):
                     #re-initalize the list
                     # need add the delay element 
                     delayCalc = (timeReceived - timeSent)*1000
-                    tracelist1 = [ttl, str(delayCalc), destAddr, getHostname]
+                    # print(delayCalc)
+                    tracelist1 = [str(ttl), str(delayCalc), destAddr, getHostname]
                     # tracelist1 = ([ttl, destAddr, getHostname])
                     # tracelist2.append(responses)
                     # print(tracelist1)
                     tracelist2.append(tracelist1)
                     #print(responses)
-                    print(tracelist2)
+                    # print(tracelist2)
                     return tracelist2
                     #Fill in start
                     #You should add your responses to your lists here and return your list if your destination IP is met
