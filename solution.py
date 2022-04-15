@@ -7,6 +7,7 @@ import time
 import select
 import binascii
 import socket
+from turtle import delay
 import types
 from urllib import response
 # from socket import socket
@@ -152,25 +153,30 @@ def get_route(hostname):
                     bytes = struct.calcsize("d")
                     timeSent = struct.unpack("d", recvPacket[28:28 +
                     bytes])[0]
+                    delayT = timeReceived - timeSent
                     #Fill in start
                     #You should add your responses to your lists here
-                    tracelist1.append([ttl, destAddr, getHostname])
+                    tracelist1 = [ttl, delayT, destAddr, getHostname]
                     # print( tracelist1)
                     tracelist2.append(tracelist1)
                     #Fill in end
                 elif types == 3:
                     bytes = struct.calcsize("d")
                     timeSent = struct.unpack("d", recvPacket[28:28 + bytes])[0]
+                    delayT = timeReceived - timeSent
                     #Fill in start
                     #You should add your responses to your lists here
-                    tracelist1.append([ttl, destAddr, getHostname])
+                    tracelist1 = [ttl, delayT,destAddr, getHostname]
                     # print(tracelist1)
                     tracelist2.append(tracelist1)
                     #Fill in end
                 elif types == 0:
                     bytes = struct.calcsize("d")
                     timeSent = struct.unpack("d", recvPacket[28:28 + bytes])[0]
-                    tracelist1.append([ttl, destAddr, getHostname])
+                    delayT = timeReceived - timeSent
+                    #re-initalize the list
+                    # need add the delay element 
+                    tracelist1 = [ttl, delayT ,destAddr, getHostname]
                     # tracelist2.append(responses)
                     # print(tracelist1)
                     tracelist2.append(tracelist1)
