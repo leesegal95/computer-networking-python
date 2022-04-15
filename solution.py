@@ -153,30 +153,33 @@ def get_route(hostname):
                     bytes = struct.calcsize("d")
                     timeSent = struct.unpack("d", recvPacket[28:28 +
                     bytes])[0]
-                    # delayT = timeReceived - timeSent
+                    delayT = timeReceived - timeSent
+                    print(delayT)
                     #Fill in start
                     #You should add your responses to your lists here
-                    tracelist1 = [ttl, destAddr, getHostname]
+                    tracelist1.append([ttl, destAddr, getHostname])
                     # print( tracelist1)
                     tracelist2.append(tracelist1)
                     #Fill in end
                 elif types == 3:
                     bytes = struct.calcsize("d")
                     timeSent = struct.unpack("d", recvPacket[28:28 + bytes])[0]
-                    # delayT = timeReceived - timeSent
+                    delayT = timeReceived - timeSent
+                    print(delayT)
                     #Fill in start
                     #You should add your responses to your lists here
-                    tracelist1 = [ttl,destAddr, getHostname]
+                    tracelist1.append([ttl,destAddr, getHostname])
                     # print(tracelist1)
                     tracelist2.append(tracelist1)
                     #Fill in end
                 elif types == 0:
                     bytes = struct.calcsize("d")
                     timeSent = struct.unpack("d", recvPacket[28:28 + bytes])[0]
-                    # delayT = timeReceived - timeSent
+                    delayT = timeReceived - timeSent
+                    print(delayT)
                     #re-initalize the list
                     # need add the delay element 
-                    tracelist1 = [ttl ,destAddr, getHostname]
+                    tracelist1.append([ttl ,destAddr, getHostname])
                     # tracelist2.append(responses)
                     # print(tracelist1)
                     tracelist2.append(tracelist1)
