@@ -7,7 +7,7 @@ import time
 import select
 import binascii
 import socket
-from turtle import delay
+# from turtle import delay
 import types
 from urllib import response
 # from socket import socket
